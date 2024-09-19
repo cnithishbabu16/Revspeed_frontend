@@ -1,0 +1,45 @@
+/* Style for the header */
+header {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
+  background: linear-gradient(to right, #b7cef5, #cfdef3); /* Light gradient background */
+  padding: 15px 30px; /* Padding for spacing */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Style for the project name */
+.project-name {
+  font-size: 24px; /* Font size for the project name */
+  color: #333; /* Dark grey text color */
+  margin: 0; /* Remove default margin */
+}
+
+/* Style for the logo container */
+.logo {
+  display: flex; /* Flexbox for layout */
+  align-items: center; /* Center items vertically */
+}
+
+/* Style for the logo image (if used) */
+.logo img {
+  height: 40px; /* Adjust height as needed */
+  margin-right: 15px; /* Space between image and button */
+}
+
+/* Style for the logout button */
+.logo button {
+  background: linear-gradient(to right, #1e90ff, #87cefa); /* Bright blue gradient background */
+  color: #ffffff; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 8px 15px; /* Padding for button */
+  font-size: 16px; /* Font size for button text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s ease; /* Smooth transition effect */
+}
+
+/* Style for the logout button on hover */
+.logo button:hover {
+  background: linear-gradient(to right, #4682b4, #b0e0e6); /* Darker blue gradient on hover */
+}

@@ -1,0 +1,81 @@
+header.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: linear-gradient(45deg, #6eadf4, #8b06ff);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+h1.project-name {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.profile {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile img {
+  border-radius: 50%;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.profile img:hover {
+  transform: scale(1.1);
+}
+
+.profile ul.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.profile ul.dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.profile ul.dropdown-menu li {
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.profile ul.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.profile ul.dropdown-menu li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.profile ul.dropdown-menu li a:hover {
+  color: #9013fe;
+}
+
+.profile ul.dropdown-menu li a:last-child {
+  color: red;
+}
+
+.profile ul.dropdown-menu li a:last-child:hover {
+  color: darkred;
+}

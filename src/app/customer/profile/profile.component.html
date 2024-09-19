@@ -1,0 +1,47 @@
+<h2>Your Profile</h2>
+
+<div class="user-container">
+  <h4>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  :   &nbsp;&nbsp;{{  user.name}}</h4>
+  <h4>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;  {{  user.email}}</h4>
+  <h4>Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     :   &nbsp;&nbsp;{{  user.address}}</h4>
+  <h4>Phone Number:   &nbsp;&nbsp;{{  user.phoneNo}}</h4>
+
+  <button (click)="openModal()">Update Profile</button>
+</div>
+
+<!-- Button to open the modal -->
+
+
+<!-- Modal container -->
+<div class="modal" *ngIf="isModalOpen">
+  <div class="modal-content">
+    <span class="close-button" (click)="closeModal()">&times;</span>
+    <h2>Update Profile</h2>
+    <form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email">
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input id="address" type="text" formControlName="address">
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNo">Phone Number</label>
+        <input id="phoneNo" type="text" formControlName="phoneNo">
+      </div>
+
+      <button type="submit" [disabled]="!profileForm.valid">Update Profile</button>
+    </form>
+  </div>
+</div>
+
+<!-- Delete button -->
+<button class="delete-button" (click)="deleteProfile()">Delete Profile</button>

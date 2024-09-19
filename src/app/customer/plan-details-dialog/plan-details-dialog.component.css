@@ -1,0 +1,95 @@
+/* Dialog overlay - hides the background */
+.cdk-overlay-backdrop {
+  background-color: rgba(0, 0, 0, 0.7); /* Darkens the background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1001;
+}
+
+/* Center the dialog */
+.mat-dialog-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #df8484;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Dialog title styling */
+.mat-dialog-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f35d9ea1;
+  text-align: center;
+  margin-bottom: 20px;
+
+
+}
+
+/* Dialog content styling */
+mat-dialog-content p {
+  font-size: 16px;
+  color: #666;
+  margin: 10px 0;
+}
+
+/* Highlight important details */
+mat-dialog-content p strong {
+  color: #000;
+}
+
+/* Dialog actions styling */
+.mat-dialog-actions {
+  margin-top: 20px;
+  
+  text-align: right;
+}
+
+/* Button styling */
+button {
+  font-size: 14px;
+  padding: 10px ;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[mat-button] {
+  background-color: #f44336; /* Red for the cancel button */
+  color: white;
+}
+
+button[mat-raised-button] {
+  background-color: #4caf50; /* Green for subscribe button */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[mat-raised-button]:hover {
+  background-color: #388e3c; /* Darker green on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
+}
+
+button[mat-button]:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Padding around the dialog content */
+mat-dialog-content {
+  padding: 20px 0;
+}
+
+/* Adjustments for the button layout */
+.mat-dialog-actions button {
+  margin-left: 10px;
+}
+

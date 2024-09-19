@@ -1,0 +1,41 @@
+/* Style for the welcome section */
+.welcome-section {
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 8px; /* Rounded corners for the section */
+    padding: 20px; /* Padding for content spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px; /* Margin around the section */
+}
+
+/* Style for the section heading */
+.welcome-section h2 {
+    font-size: 28px; /* Larger font size for heading */
+    color: #2c3e50; /* Dark blue-grey text color */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+/* Style for the section paragraph */
+.welcome-section p {
+    font-size: 16px; /* Standard font size for text */
+    color: #7f8c8d; /* Light grey text color */
+    line-height: 1.6; /* Improved readability */
+    margin-bottom: 15px; /* Space below the paragraph */
+}
+
+/* Style for the unordered list */
+.welcome-section ul {
+    padding-left: 20px; /* Indent the list */
+    margin-bottom: 15px; /* Space below the list */
+}
+
+/* Style for each list item */
+.welcome-section li {
+    margin-bottom: 10px; /* Space between list items */
+    font-size: 16px; /* Standard font size for list items */
+    color: #2c3e50; /* Dark blue-grey text color */
+}
+
+/* Style for strong text within list items */
+.welcome-section li strong {
+    color: #3498db; /* Bright blue color for emphasis */
+}

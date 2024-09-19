@@ -1,0 +1,166 @@
+/* Global styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.container {
+  width: 85%;
+  margin: 20px auto;
+}
+
+/* Filter card styling */
+.filter-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.filter-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-form-field {
+  width: 45%;
+  margin: 0;
+}
+
+h6 {
+  margin: 0;
+  color: #333;
+}
+
+/* Plans list styling */
+.plans-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+/* Plan card styling */
+.plan-card {
+  width: 30%;
+  background: linear-gradient(145deg, #32f0b0 0%, #8dafea 100%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Plan name - Bold and large */
+.plan-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #fffacd;
+}
+
+/* Plan validity */
+.plan-card-subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #ffd700;
+}
+
+/* Plan details styling */
+.plan-card-content p {
+  margin: 10px 0;
+}
+
+.plan-speed {
+  font-size: 16px;
+  color: #7fffd4; /* Light sea green */
+  font-weight: 500;
+}
+
+.plan-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff69b4; /* Hot pink */
+}
+
+.plan-card-header {
+  padding: 10px;
+}
+
+/* Remove mat-card-actions since the card acts as a button */
+.plan-card-actions {
+  display: none;
+}
+
+/* Dialog box styling */
+.mat-dialog-container {
+  max-width: 500px;
+  margin: auto;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Dropdown fix - ensure proper positioning */
+/* .mat-select-panel {
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  transform: none !important;
+} */
+
+/* Dropdown field custom styling */
+/* .mat-option {
+  padding: 10px 20px;
+} */
+
+.mat-form-field {
+  position: relative;
+  /* z-index: auto; */
+}
+
+/* Added for additional layering */
+.filter-form {
+  position: relative;
+  /* z-index: auto; */
+}
+
+.filter-card {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.filter-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width:200px;
+  margin: 10px;
+}
+

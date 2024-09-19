@@ -1,0 +1,58 @@
+/* Style for the subscription container */
+.subscription-container {
+  max-width: 600px; /* Limit the width of the container */
+  margin: 20px auto; /* Center the container */
+  padding: 20px; /* Padding inside the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Style for the mat-card component */
+mat-card {
+  background-color: #ffffff; /* White background for the card */
+  border-radius: 8px; /* Rounded corners for the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for card */
+}
+
+/* Style for the card title */
+mat-card-title {
+  font-size: 24px; /* Font size for the title */
+  font-weight: bold; /* Bold text for the title */
+  color: #2c3e50; /* Dark blue-grey text color */
+  margin-bottom: 15px; /* Space below the title */
+}
+
+/* Style for the card content */
+mat-card-content {
+  font-size: 16px; /* Standard font size for content */
+  color: #2c3e50; /* Dark blue-grey text color */
+  line-height: 1.6; /* Improved readability */
+}
+
+/* Style for form fields */
+mat-form-field {
+  display: block; /* Make the form field block level */
+  margin-bottom: 20px; /* Space below each form field */
+}
+
+/* Style for the card element input */
+#card-element {
+  margin-bottom: 20px; /* Space below the card element */
+}
+
+/* Style for the submit button */
+button.mat-raised-button {
+  width: 100%; /* Full width button */
+  font-size: 16px; /* Font size for the button text */
+  font-weight: bold; /* Bold text on the button */
+  padding: 12px; /* Padding inside the button */
+  border-radius: 4px; /* Rounded corners for the button */
+  background-color: #3498db; /* Primary color for the button */
+  color: #ffffff; /* White text color */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Style for button on hover */
+button.mat-raised-button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}

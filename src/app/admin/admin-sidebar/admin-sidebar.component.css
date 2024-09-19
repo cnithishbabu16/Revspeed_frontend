@@ -1,0 +1,48 @@
+/* Style for the navigation container */
+nav {
+  width: 200px;
+  height: 2600px; /* Full viewport height for the navbar */
+  background: linear-gradient(to bottom, #747676, #212121); /* Dark gradient background */
+  padding: 20px; /* Adjusted padding */
+}
+
+/* Style for the list inside the navigation */
+ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+}
+
+/* Style for each list item */
+li {
+  margin-bottom: 15px; /* Increased space between items */
+}
+
+/* Style for the links */
+a {
+  display: flex; /* Flex layout for icons and text */
+  align-items: center; /* Vertically center items */
+  text-decoration: none; /* Remove underline from links */
+  color: #b2bec3; /* Light grey text color */
+  font-weight: bold; /* Bold text */
+  padding: 12px 20px; /* Add padding */
+  border-radius: 5px; /* Rounded corners for links */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+}
+
+/* Style for links on hover */
+a:hover {
+  background-color: #00b894; /* Vibrant green background on hover */
+  color: #ffffff; /* White text color on hover */
+}
+
+/* Style for the active link */
+.active {
+  background-color: #00cec9; /* Teal background for active link */
+  color: #ffffff; /* White text color for active link */
+}
+
+/* Style for icons */
+.icon {
+  margin-right: 10px; /* Space between icon and text */
+  font-size: 18px; /* Size of the icon */
+}

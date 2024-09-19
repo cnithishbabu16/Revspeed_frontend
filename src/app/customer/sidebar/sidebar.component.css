@@ -1,0 +1,83 @@
+/* Style for the navigation container */
+nav {
+  width: 200px;
+  height: 2600px; /* Full viewport height */
+  background: linear-gradient(200deg, #979898, #011936); /* Teal to Deep Blue gradient */
+  padding: 20px;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.15); /* Darker shadow for depth */
+  position: relative; /* Keep sidebar fixed */
+  top: 0;
+  left: 0;
+}
+
+/* Style for the list inside the navigation */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style for each list item */
+li {
+  margin-bottom: 15px; /* Increased space between items */
+}
+
+/* Style for the links */
+a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff; /* White text color */
+  font-weight: 600; /* Bolder text */
+  padding: 12px 18px; /* Padding for links */
+  border-radius: 8px; /* Soft rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent white background for links */
+  font-family: 'Montserrat', sans-serif; /* Modern font style */
+}
+
+/* Style for links on hover */
+a:hover {
+  background: rgba(255, 87, 51, 0.3); /* Coral background on hover */
+  color: #39ff14; /* Lime green text color on hover */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow effect on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Style for the active link */
+.active {
+
+  background: linear-gradient(45deg,  #eac2bb,#39ff14); /* Lime green to Coral gradient for active link */
+  color: #ffffff; /* White text color for active link */
+  box-shadow: 0px 4px 15px rgba(255, 99, 71, 0.4); /* Glowing shadow for active link */
+  transform: scale(1.05); /* Slightly enlarged active link */
+}
+
+/* Add a subtle animation when sidebar items are clicked */
+li a:active {
+  background-color: #39ff14; /* Lime green background on click */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25); /* Darker shadow on click */
+  transform: scale(0.98); /* Slight shrink effect on click */
+}
+
+/* Smooth scrolling for the sidebar */
+nav {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #39ff14 #0072ff; /* Custom scrollbar colors */
+}
+
+nav::-webkit-scrollbar {
+  width: 8px;
+}
+
+nav::-webkit-scrollbar-thumb {
+  background-color: #39ff14; /* Lime green scroll thumb */
+  border-radius: 4px;
+}
+
+nav::-webkit-scrollbar-track {
+  background: #0072ff; /* Deep blue background for scrollbar track */
+}
+
+/* Optional styling for hover effects on the sidebar itself */
+

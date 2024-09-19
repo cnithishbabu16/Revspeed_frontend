@@ -1,0 +1,28 @@
+<div class="admin-users">
+    <h2>Users</h2>
+    
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; trackBy: trackByUserId">
+            <tr *ngFor="let user of users; ">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phoneNo }}</td>
+          <td>{{ user.address }}</td>
+          <td>
+            <button (click)="deleteUser(user.id)" class="delete-button"><img src="/assets/delete.svg" alt="Bootstrap" width="28"  height="28"></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

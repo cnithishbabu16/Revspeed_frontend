@@ -1,0 +1,94 @@
+<div class="container">
+  <!-- <mat-card class="filter-card">
+    <mat-card-title><b>Filter Plans</b></mat-card-title>
+    <mat-card-content> -->
+      <!-- <form class="filter-form">
+        <mat-form-field appearance="fill" >
+          <h6>Duration</h6>
+          <mat-label>Duration</mat-label>
+          <mat-select [(value)]="selectedDuration"  (selectionChange)="applyFilters()">
+            <mat-option value="all">All</mat-option>
+            <mat-option value="monthly">Monthly</mat-option>
+            <mat-option value="quarterly">Quarterly</mat-option>
+            <mat-option value="yearly">Yearly</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <h6>Speed</h6>
+          <mat-label>Speed</mat-label>
+          <mat-select [(value)]="selectedSpeed" (selectionChange)="applyFilters()">
+            <mat-option value="all">All</mat-option>
+            <mat-option value="slow">Up to 50 Mbps</mat-option>
+            <mat-option value="medium">51-150 Mbps</mat-option>
+            <mat-option value="fast">151+ Mbps</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form> -->
+      <div class="filter-card">
+        <h2>Filter Plans</h2>
+      <form class="filter-form">
+        <!-- Duration Filter -->
+        <div class="filter-group">
+          <label for="duration">Duration:</label>
+          <select id="duration" [(ngModel)]="selectedDuration" name="duration" (change)="applyFilters()">
+            <option value="all">All</option>
+            <option value="monthly">Monthly</option>
+            <option value="quarterly">Quarterly</option>
+            <option value="yearly">Yearly</option>
+          </select>
+        </div>
+  
+        <!-- Speed Filter -->
+        <div class="filter-group">
+          <label for="speed">Speed:</label>
+          <select id="speed" [(ngModel)]="selectedSpeed" name="speed"  (change)="applyFilters()">
+            <option value="all">All</option>
+            <option value="slow">Up to 50 Mbps</option>
+            <option value="medium">51-150 Mbps</option>
+            <option value="fast">151+ Mbps</option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <!-- </mat-card-content>
+  </mat-card> -->
+  <div class="plans-list">
+    <mat-card *ngFor="let plan of filteredPlans" class="plan-card" routerLink="plan-details" (click)="openPlanDetails(plan.id)">
+      <mat-card-header>
+        <mat-card-title><h3>{{ plan.name }}</h3></mat-card-title>
+        <!-- <mat-card-subtitle>{{ plan.duration }} Days</mat-card-subtitle> -->
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Validity:</strong>{{plan.duration}} Days</p>
+        
+        <p><strong>Speed:</strong> {{ plan.speed }} Mbps</p>
+        <p><strong>Price:</strong> ${{ plan.price }}</p>
+        <p> {{ getPlatformNames(plan) }}</p>
+      </mat-card-content>
+      <!-- <mat-card-actions>
+        <button mat-raised-button color="primary" >Subscribe</button>
+      </mat-card-actions> -->
+    </mat-card>
+  </div>
+
+</div>
+
+
+<!-- <div class="plans-container">
+    <div class="plan-card" *ngFor="let plan of plans" (click)="selectPlan(plan)">
+      <h3>{{ plan.name }}</h3>
+      <p>Unlimited&#64;{{plan.speed}} mb/s</p>
+      <p>{{ plan.description }}</p>
+      <p>{{plan.duration}} Days</p>
+      <p>Price: {{ plan.price | currency }}</p>
+    </div>
+</div>
+   -->
+  <!-- <div *ngIf="selectedPlan" class="plan-details">
+    <h2>{{ selectedPlan.name }}</h2>
+    <p><strong>Description:</strong> {{ selectedPlan.description }}</p>
+    <p><strong>Price:</strong> {{ selectedPlan.price | currency }}</p>
+    <p><strong>Details:</strong> {{ selectedPlan.ottplatforms }}</p>
+  </div> -->
+  

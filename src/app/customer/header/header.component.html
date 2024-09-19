@@ -1,0 +1,11 @@
+<header class="title">
+    <h1 class="project-name">RevSpeed</h1>
+    <div class="profile" (mouseover)="showDropdown()" (mouseleave)="hideDropdown()">
+      <img src="/assets/person-circle.svg" alt="Bootstrap" width="24"  height="24">
+      <ul class="dropdown-menu" [class.show]="isDropdownVisible">
+        <li><a routerLink="profile">View Profile</a></li>
+        <li><a (click)="logout()">Log out</a></li>
+      </ul>
+    </div>
+</header>
+  

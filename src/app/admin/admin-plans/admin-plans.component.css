@@ -1,0 +1,75 @@
+/* Button styling similar to the reference */
+.create-btn {
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.create-btn:hover {
+  background-color: #5a4bcf;
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  color: #444;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Button actions inside table */
+.table .btn-info {
+  background-color: #f3f5f7;
+  color: white;
+  margin-right: 4px;
+}
+
+.table .btn-danger {
+  background-color: #f6efef;
+  color: white;
+  margin-left: 3px;
+}
+
+/* Modal adjustments */
+.modal-dialog {
+  max-width: 600px;
+}
+
+.modal-content {
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: #6c5ce7;
+  color: white;
+}
+
+.modal-header .btn-close {
+  background: transparent;
+}
+
+.modal-header .btn-close img {
+  filter: invert(1); /* Change close icon to white */
+}

@@ -1,0 +1,98 @@
+<button type="button" (click)="openModal()" class="btn btn-primary">
+  Create Plan
+</button>
+
+<div class="modal fade show" *ngIf="isModalOpen" id="planModal" tabindex="-1" aria-labelledby="planModalLabel" aria-hidden="true" style="display:block;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="planModalLabel">Create Plan</h5>
+        <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"><img src="/assets/x.svg" alt="Bootstrap" width="24"  height="24"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="planForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="planName" class="form-label">Plan Name</label>
+            <input type="text" class="form-control" id="planName" formControlName="name">
+          </div>
+
+          <div class="mb-3">
+            <label for="planDescription" class="form-label">Description</label>
+            <input type="text" class="form-control" id="planDescription" formControlName="description">
+          </div>
+
+          <div class="mb-3">
+            <label for="planPrice" class="form-label">Price</label>
+            <input type="number" class="form-control" id="planPrice" formControlName="price">
+          </div>
+
+          <div class="mb-3">
+            <label for="planSpeed" class="form-label">Speed</label>
+            <input type="number" class="form-control" id="planSpeed" formControlName="speed">
+          </div>
+
+          <div class="mb-3">
+            <label for="planDuration" class="form-label">Duration (days)</label>
+            <input type="number" class="form-control" id="planDuration" formControlName="duration">
+          </div>
+
+          <div class="mb-3">
+            <label>OTT Platforms:</label>
+            <div formArrayName="selectedOttPlatforms">
+              <div *ngFor="let platform of ottPlatforms; let i = index">
+                <input type="checkbox" [formControlName]="i"> {{ platform.name }}
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-success">Save Plan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Plan Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Price</th>
+      <th scope="col">Duration (days)</th>
+      <th scope="col">OTT Platforms</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let plan of plans">
+      <td>{{ plan.name }}</td>
+      <td>{{ plan.description }}</td>
+      <td>{{ plan.price | currency }}</td>
+      <td>{{ plan.duration }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let platform of plan.ottPlatforms">{{ platform.name }}</li>
+        </ul>
+      </td>
+      <td>
+        <button class="btn btn-sm btn-info" (click)="editPlan(plan.id)"><img src="/assets/edit.svg" alt="Bootstrap" width="24"  height="24"></button>
+        <button class="btn btn-sm btn-danger" (click)="deletePlan(plan.id)"><img src="/assets/delete.svg" alt="Bootstrap" width="24"  height="24"></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  
+<!--  
+  <ul>
+    <li *ngFor="let plan of plans">
+      {{ plan.name }} - {{plan.description}} -{{plan.ottPlatforms}}- {{plan.price}} - {{ plan.duration }} days
+      <ul>
+        <li *ngFor="let platform of plan.ottPlatforms">{{ platform }}</li>
+      </ul>
+      <button (click)="editPlan(plan.id)">Edit</button>
+      <button (click)="deletePlan(plan.id)">Delete</button>
+    </li>
+  </ul>
+   -->

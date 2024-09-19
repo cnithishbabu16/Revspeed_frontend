@@ -1,0 +1,174 @@
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  body {
+    background-color: #f1faff;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px 0;
+  }
+
+  .main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    background: linear-gradient(to right, #edc5c8, #d34848);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 920px;
+    position: relative;
+  }
+
+  .left-section {
+    width: 45%;
+    text-align: center;
+    height: 100%;
+  }
+
+  .Name {
+    font-size: 36px;
+    color: #333;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .description {
+    font-size: 15px;
+    font-weight: 100;
+    font-style: italic;
+  }
+
+  .illustrator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .illustrator img {
+    width: 80%;
+    margin-top: -5%;
+  }
+
+  .registration-container {
+    width: 40%;
+    height: 90%;
+    margin-right: 5%;
+  }
+
+  .registration-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .registration-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+
+  .registration-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  .registration-header .active {
+    color: #d34848;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+  }
+
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button[type="submit"] {
+    background-color: #d34848;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .illustration {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    right: 98%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d34848;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  .header nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+  }
+
+  .header nav ul li {
+    display: flex;
+    align-items: center;
+  }
+
+  .header nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    color: #d34848;
+    gap: 5px;
+  }
+
+  .header nav ul li a:hover {
+    text-decoration: underline;
+  }

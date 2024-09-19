@@ -1,0 +1,37 @@
+<div class="subscription-container">
+    <mat-card>
+      <mat-card-title>Subscribe to {{ plan.name }}</mat-card-title>
+      <mat-card-content>
+        <p><strong>Speed:</strong> {{ plan.speed }} Mbps</p>
+        <p><strong>Duration:</strong> {{ plan.duration | durationFormat }}</p>
+        <p><strong>Price:</strong> ${{ plan.price }}</p>
+        
+        <form (ngSubmit)="proceedToPayment()" [formGroup]="paymentForm">
+            
+            <mat-form-field appearance="fill">
+            
+            <!-- <mat-label>Card Number</mat-label> -->
+            <!-- Add this where you want to display the card element -->
+            
+            <div id="card-element">
+            <input matInput formControlName="cardDetails" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+            </div>
+          </mat-form-field>
+  
+          <!-- <mat-form-field appearance="fill">
+            <mat-label>Expiry Date</mat-label>
+            <input matInput formControlName="expiryDate" placeholder="MM/YY" required>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>CVC</mat-label>
+            <input matInput formControlName="cvc" placeholder="XXX" required>
+          </mat-form-field>
+         -->
+  
+          <button mat-raised-button color="primary" type="submit" >Pay ${{ plan.price }}</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

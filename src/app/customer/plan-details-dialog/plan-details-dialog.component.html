@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>{{ planDetails?.name }}</h2>
+<mat-dialog-content>
+  <p>{{ planDetails?.description }}</p>
+  <p><strong>Speed:</strong> {{ planDetails?.speed }} Mbps</p>
+  <p><strong>Duration:</strong> {{ planDetails?.duration | durationFormat }}</p>
+  <p><strong>Price:</strong> ${{ planDetails?.price }}</p>
+  <p> {{ getPlatformNames(planDetails) }}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="closeDialog()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="subscribe()">Subscribe</button>
+</mat-dialog-actions>

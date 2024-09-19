@@ -1,0 +1,139 @@
+<!-- 
+
+
+  
+
+
+  <div class="register-container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Register</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" />
+            <mat-error *ngIf="registerForm.get('email')?.hasError('required')">
+              Email is required.
+            </mat-error>
+            <mat-error *ngIf="registerForm.get('email')?.hasError('email')">
+              Enter a valid email.
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" />
+            <mat-error *ngIf="registerForm.get('name')?.hasError('required')">
+              Name is required.
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" />
+            <mat-error *ngIf="registerForm.get('password')?.hasError('required')">
+              Password is required.
+            </mat-error>
+            <mat-error *ngIf="registerForm.get('password')?.hasError('minlength')">
+              Password must be at least 6 characters long.
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Phone Number</mat-label>
+            <input matInput formControlName="phoneNo" />
+            <mat-error *ngIf="registerForm.get('phoneNo')?.hasError('required')">
+              Phone number is required.
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Address</mat-label>
+            <textarea matInput formControlName="address"></textarea>
+          </mat-form-field>
+        </mat-card-content>
+  
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Register</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
+   -->
+
+   <div class="container">
+    <div class="header">
+      <div class="illustration">RS</div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">
+              <i class="bi bi-house"></i> Home
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-info-circle"></i> About Us
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-envelope"></i> Contact Us
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  
+    <div class="main-content">
+      <div class="left-section">
+        <div class="Name">
+          <h1 class="title">RevSpeed</h1>
+          <p class="description">Register to manage your account</p>
+        </div>
+        <!-- <div class="illustrator">
+          <img src="assets/registration-illustration.jpg" alt="Illustration">
+        </div> -->
+      </div>
+  
+      <div class="registration-container">
+        <div class="registration-box">
+          <div class="registration-header">
+            <h2 class="active">Register</h2>
+          </div>
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" formControlName="email" required />
+              <mat-error *ngIf="registerForm.get('email')?.hasError('required')">Email is required.</mat-error>
+              <mat-error *ngIf="registerForm.get('email')?.hasError('email')">Enter a valid email.</mat-error>
+            </div>
+            <div class="input-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="name" formControlName="name" required />
+              <mat-error *ngIf="registerForm.get('name')?.hasError('required')">Name is required.</mat-error>
+            </div>
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" formControlName="password" required />
+              <mat-error *ngIf="registerForm.get('password')?.hasError('required')">Password is required.</mat-error>
+              <mat-error *ngIf="registerForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long.</mat-error>
+            </div>
+            <div class="input-group">
+              <label for="phoneNo">Phone Number</label>
+              <input type="text" class="form-control" id="phoneNo" name="phoneNo" formControlName="phoneNo" required />
+              <mat-error *ngIf="registerForm.get('phoneNo')?.hasError('required')">Phone number is required.</mat-error>
+            </div>
+            <div class="input-group">
+              <label for="address">Address</label>
+              <textarea class="form-control" id="address" name="address" formControlName="address"></textarea>
+            </div>
+            <button type="submit">Register</button>
+          </form>
+          <a routerLink="/login">login</a>
+        </div>
+      </div>
+    </div>
+  </div>
