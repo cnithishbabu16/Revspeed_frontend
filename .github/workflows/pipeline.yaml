@@ -1,3 +1,78 @@
+# name: Angular GKE
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# env:
+#   PROJECT_ID: ${{secrets.GKE_PROJECT}}
+#   GKE_CLUSTER: cost-optimized-cluster-1
+#   GKE_ZONE: us-central1-c
+#   IMAGE: revspeed-angular-gke-image
+#   TAG: 0.0.1
+#   DEPLOYMENT_NAME: revspeed-angular-gke
+#   REPOSITORY_NAME: my-repo
+
+# jobs:
+#   build-and-deploy:
+#     name: Build and Deploy Angular App to GKE
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v2
+
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: '20'
+#           check-latest: true
+
+#       - name: Install Angular CLI and dependencies
+#         run: |
+#           npm install -g @angular/cli
+#           npm install
+
+#       - name: Build Angular App
+#         run: npm run build
+
+#       - name: Setup Google Cloud CLI
+#         uses: GoogleCloudPlatform/github-actions/setup-gcloud@v0.2.1
+#         with:
+#           service_account_key: ${{secrets.GKE_SA_KEY}}
+#           project_id: ${{secrets.GKE_PROJECT}}
+
+#       - name: Configure Docker
+#         run: gcloud auth configure-docker
+
+#       - name: Build Docker Image
+#         run: |
+#          PROJECT_ID=$(echo "$PROJECT_ID" | tr -d '\n')
+#          docker build --tag "gcr.io/$PROJECT_ID/$REPOSITORY_NAME/$IMAGE:0.0.1" .
+
+#       - name: Push Docker Image to GCR
+#         run: |
+#           docker push gcr.io/${{ env.PROJECT_ID }}/${{env.REPOSITORY_NAME}}/${{ env.IMAGE }}:0.0.1
+
+#       - name: Set Google Cloud Project ID and Get GKE Credentials
+#         run: gcloud config set project $PROJECT_ID && gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
+    
+#       - name: Set up Kustomize
+#         run: |-
+#           curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
+#           chmod u+x ./kustomize
+
+#       - name: Install gke-gcloud-auth-plugin
+#         run: gcloud components install kubectl
+
+#       - name: Apply Kubernetes Deployment
+#         run: |
+#           ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/${PROJECT_ID}/${IMAGE}:0.0.1
+#           ./kustomize build . | kubectl apply -f -
+#           kubectl rollout status deployment/${DEPLOYMENT_NAME}
+#           # kubectl get services -o wide
+
 name: Angular GKE
 
 on:
@@ -13,6 +88,7 @@ env:
   TAG: 0.0.1
   DEPLOYMENT_NAME: revspeed-angular-gke
   REPOSITORY_NAME: my-repo
+  REGION: us-central1 # Update this to your Artifact Registry region
 
 jobs:
   build-and-deploy:
@@ -43,21 +119,21 @@ jobs:
           service_account_key: ${{secrets.GKE_SA_KEY}}
           project_id: ${{secrets.GKE_PROJECT}}
 
-      - name: Configure Docker
-        run: gcloud auth configure-docker
+      - name: Configure Docker for Artifact Registry
+        run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev
 
       - name: Build Docker Image
         run: |
-         PROJECT_ID=$(echo "$PROJECT_ID" | tr -d '\n')
-         docker build --tag "gcr.io/$PROJECT_ID/$REPOSITORY_NAME/$IMAGE:0.0.1" .
+          PROJECT_ID=$(echo "$PROJECT_ID" | tr -d '\n')
+          docker build --tag "${{ env.REGION }}-docker.pkg.dev/$PROJECT_ID/$REPOSITORY_NAME/$IMAGE:$TAG" .
 
-      - name: Push Docker Image to GCR
+      - name: Push Docker Image to Artifact Registry
         run: |
-          docker push gcr.io/${{ env.PROJECT_ID }}/${{env.REPOSITORY_NAME}}/${{ env.IMAGE }}:0.0.1
+          docker push "${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY_NAME }}/${{ env.IMAGE }}:${{ env.TAG }}"
 
       - name: Set Google Cloud Project ID and Get GKE Credentials
         run: gcloud config set project $PROJECT_ID && gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
-    
+
       - name: Set up Kustomize
         run: |-
           curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
@@ -68,7 +144,7 @@ jobs:
 
       - name: Apply Kubernetes Deployment
         run: |
-          ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/${PROJECT_ID}/${IMAGE}:0.0.1
+          ./kustomize edit set image ${{ env.REGION }}-docker.pkg.dev/$PROJECT_ID/$REPOSITORY_NAME/$IMAGE:$TAG=${{ env.REGION }}-docker.pkg.dev/$PROJECT_ID/$IMAGE:$TAG
           ./kustomize build . | kubectl apply -f -
           kubectl rollout status deployment/${DEPLOYMENT_NAME}
           kubectl get services -o wide
