@@ -30,6 +30,7 @@ export class LoginComponent {
         this.authService.saveUserId(response.id);
         this.authService.saveToken(response.token);
         const role = this.authService.getRoleFromToken();
+        
         if (role === 'ROLE_ADMIN') {
           this.router.navigate(['/admin/home']);
         } else if (role === 'ROLE_CUSTOMER') {

@@ -6,7 +6,7 @@ import { catchError, map, Observable, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class PaymentService {
-  private apiUrl = 'http://localhost:8080/api/payment';
+  private apiUrl = 'http://35.222.240.69:8080/api/payment';
 
   constructor(private http: HttpClient) { }
 

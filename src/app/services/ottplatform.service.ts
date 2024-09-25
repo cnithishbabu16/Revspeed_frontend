@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class OttplatformService {
 
-  private apiUrl = 'http://localhost:8080/api/ottplatforms/all';
+  private apiUrl = 'http://35.222.240.69:8080/api/ottplatforms/all';
 
   constructor(private http: HttpClient) {}
 

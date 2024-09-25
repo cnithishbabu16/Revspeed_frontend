@@ -29,5 +29,5 @@ COPY --from=build /app/dist/revspeed-1/browser /usr/share/nginx/html
 #expose the default Nginx port 
 EXPOSE 80
 
-#start Nginx server
+#start Nginx server             
 CMD ["nginx","-g","daemon off;"]

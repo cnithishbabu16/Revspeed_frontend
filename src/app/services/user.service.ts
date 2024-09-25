@@ -11,7 +11,7 @@ export class UserService {
   
   
 
-  private apiUrl = 'http://localhost:8080/api';
+  private apiUrl = 'http://35.222.240.69:8080/api';
   
   // Initialize BehaviorSubject with an empty array
    private usersSubject = new BehaviorSubject<User[]>([]);

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'http://35.222.240.69:8080';
  
 
   constructor(private http: HttpClient,private router: Router,) { }

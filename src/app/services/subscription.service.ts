@@ -6,7 +6,7 @@ import { catchError, Observable, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class SubscriptionService {
-  private apiUrl = 'http://localhost:8080/api/subscriptions';
+  private apiUrl = 'http://35.222.240.69:8080/api/subscriptions';
 
   constructor(private http: HttpClient) { }
 
