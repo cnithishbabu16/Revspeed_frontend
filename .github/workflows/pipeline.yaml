@@ -12,6 +12,7 @@ env:
   IMAGE: revspeed-angular-gke-image
   TAG: 0.0.1
   DEPLOYMENT_NAME: revspeed-angular-gke
+  REPOSITORY_NAME: my-repo
 
 jobs:
   build-and-deploy:
@@ -48,11 +49,11 @@ jobs:
       - name: Build Docker Image
         run: |
          PROJECT_ID=$(echo "$PROJECT_ID" | tr -d '\n')
-         docker build --tag "gcr.io/$PROJECT_ID/$IMAGE:0.0.1" .
+         docker build --tag "gcr.io/$PROJECT_ID/$REPOSITORY_NAME/$IMAGE:0.0.1" .
 
       - name: Push Docker Image to GCR
         run: |
-          docker push gcr.io/${{ env.PROJECT_ID }}/${{ env.IMAGE }}:0.0.1
+          docker push gcr.io/${{ env.PROJECT_ID }}/${{env.REPOSITORY_NAME}}/${{ env.IMAGE }}:0.0.1
 
       - name: Set Google Cloud Project ID and Get GKE Credentials
         run: gcloud config set project $PROJECT_ID && gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
