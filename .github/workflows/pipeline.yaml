@@ -144,7 +144,7 @@ jobs:
 
       - name: Apply Kubernetes Deployment
         run: |
-          ./kustomize edit set image ${{ env.REGION }}-docker.pkg.dev/$PROJECT_ID/$REPOSITORY_NAME/$IMAGE:$TAG=${{ env.REGION }}-docker.pkg.dev/$PROJECT_ID/$IMAGE:$TAG
+          ./kustomize edit set image ${{ env.REGION }}-docker.pkg.dev/$PROJECT_ID/$REPOSITORY_NAME/$IMAGE:$TAG=${{ env.REGION }}-docker.pkg.dev/$PROJECT_ID/$REPOSITORY_NAME/$IMAGE:$TAG
           ./kustomize build . | kubectl apply -f -
           kubectl rollout status deployment/${DEPLOYMENT_NAME}
           kubectl get services -o wide
