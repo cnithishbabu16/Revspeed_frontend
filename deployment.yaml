@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: revspeed-angular-gke
-          image: gcr.io/revspeed16/revspeed-angular-gke-image:0.0.1
+          image: gcr.io/revspeed16/my-repo/revspeed-angular-gke-image:0.0.1
           imagePullPolicy: Always
           ports:
             - containerPort: 4200
