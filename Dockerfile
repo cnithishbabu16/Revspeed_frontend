@@ -24,7 +24,7 @@ RUN npm run build -- --configuration production
 FROM nginx:alpine
 
 #Copy the Angular build output form the previous step to the Nginx container
-COPY --from=build /app/dist/revspeed-1 /usr/share/nginx/html
+COPY --from=build /app/dist/revspeed-1/browser /usr/share/nginx/html
 
 #expose the default Nginx port 
 EXPOSE 80
