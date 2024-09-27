@@ -61,7 +61,7 @@ spec:
           image: us-central1-docker.pkg.dev/revspeed16/my-repo/revspeed-angular-gke-image:0.0.1
           imagePullPolicy: Always
           ports:
-            - containerPort: 4200
+            - containerPort: 80
       imagePullSecrets:
         - name: my-image-pull-secret
 ---
